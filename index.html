@@ -21,6 +21,13 @@
     <style>
         * {
             z-index: 10;
+            cursor: default;
+        }
+        a {
+            cursor: pointer;
+        }
+        a * {
+            cursor: pointer;
         }
         body {
             position: absolute;
@@ -135,13 +142,15 @@
             border-radius: 12px;
             color: #a0a0a0;
             font-weight: 500;
-            padding: 10px 20px 10px 20px;
+            padding: 20px 40px 20px 40px;
             border-width: 1px;
             border-style: solid;
             border-color: rgb(86, 86, 86);
         }
         .pcard .pctitle {
             color: #c0c0c0;
+            border-bottom:solid 1px rgb(86, 86, 86);
+            margin: 0 0 10px;
         }
         .octicon-wip {
             color:#3fb950;
@@ -150,12 +159,21 @@
             color:#a371f7;
         }
         .octicon-unfinished {
-            color:#a371f7;
+            color:#848d97;
         }
         .octicon {
             width: 16px;
             height: 16px;
-            transform: translateY(15%);
+            transform: translateY(8%);
+        }
+        .time {
+            font-size: smaller;
+            font-weight: 300;
+            text-decoration: underline;
+            margin: 10px 0 0;
+        }
+        .right_text {
+            text-align: right;
         }
     </style>
 </head>
@@ -209,7 +227,7 @@
             Some projects of mine:
         </p>
 
-        <ul class="list-card marg">
+        <ul class="list-card marg" id="projects">
             <a href="#" style="display: block; text-decoration: none; color: inherit;">
             <li class="pcard">
                 <div class="pctitle t1">
@@ -221,8 +239,8 @@
                 <div class="pcdesc t2">A simple mod for the video game named Spaceflight Simulator. It adds the SLS and the Falcon Heavy to recreate the Artemis program</div>
             </li>
             </a>
-            <a href="https://github.com/Cryptowave2-0/hebergement_system" style="display: block; text-decoration: none; color: inherit;">
-            <li class="pcard">
+            <a href="https://github.com/Cryptowave2-0/hebergement_system" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+            <li class="pcard" id="896260033">
                 <div class="pctitle t1">
                     <svg class="octicon octicon-wip" fill="currentColor">
                         <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
@@ -233,7 +251,7 @@
             </li>
             </a>
             <a href="https://github.com/Cryptowave2-0/titan_mod_part_for_sfs" style="display: block; text-decoration: none; color: inherit;">
-            <li class="pcard">
+            <li class="pcard" id="733828356">
                 <div class="pctitle t1">
                     <svg class="octicon octicon-done" fill="currentColor">
                         <path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path>
@@ -244,7 +262,7 @@
             </li>
             </a>
             <a href="https://github.com/Cryptowave2-0/gemini_mod_part_for_sfs" style="display: block; text-decoration: none; color: inherit;">
-                <li class="pcard">
+                <li class="pcard" id="727898085">
                     <div class="pctitle t1">
                         <svg class="octicon octicon-done" fill="currentColor">
                             <path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path>
@@ -254,7 +272,35 @@
                     <div class="pcdesc t2">A mod that implements the Gemini spacecraft in the Spaceflight Simulator video game.</div>
                 </li>
             </a>
+            <a href="https://github.com/Cryptowave2-0/SFS-PLANET-EDITOR" style="display: block; text-decoration: none; color: inherit;">
+                <li class="pcard" id="651924552">
+                    <div class="pctitle t1">
+                        <svg class="octicon octicon-unfinished" fill="currentColor">
+                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm9.78-2.22-5.5 5.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l5.5-5.5a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path>
+                        </svg>
+                    SFS PLANET EDITOR</div>
+                    <div class="pcdesc t2">An application to modify and create your own solar systems for the 2d video game Sapceflight Simulator</div>
+                </li>
+            </a>
         </ul>
+    </section>
+    <section>
+        <div class="tag center marg">Contacts</div>
+        <p class="t2">
+            My social networks and contacts:
+        </p>
+        
+        <div class="tags-container">
+            <a href="https://discord.gg/7d5jfTJSfu" target="_blank" class="tag" style="text-decoration: none;">Discord</a>
+            <a href="https://github.com/Cryptowave2-0" target="_blank" class="tag" style="text-decoration: none;">Github</a>
+            <a href="https://www.youtube.com/@planet_edit_the_only_one" target="_blank" class="tag" style="text-decoration: none;">Youtube</a>
+            <a href="https://www.instagram.com/planet_edit_sfs/" target="_blank" class="tag" style="text-decoration: none;">Instagram</a>
+            <span class="tag" onclick="copyToClipboard(this)" data-copy="planeteditoroff@gmail.com" style="cursor: pointer;">Email</span>
+        </div>
+    </section>
+    <section>
+        <div class="tag center marg">Credits</div>
+        <p class="t2 center" id="credits_zone">Made by planet_edit</p>
     </section>
     <script>
         const rightl = document.querySelector('.rightl');
@@ -269,6 +315,159 @@
         lights.forEach((light) => {
                 light.style.width = `${window.innerWidth*1.5}px`;
         })
+
+
+        function timeAgo(isoDate) {
+            const now = new Date();
+            const updated = new Date(isoDate);
+            const diff = Math.floor((now - updated) / 1000); // en secondes
+
+            const minutes = Math.floor(diff / 60);
+            const hours = Math.floor(diff / 3600);
+            const days = Math.floor(diff / 86400);
+            const months = Math.floor(diff / 2592000); // approx 30 jours
+            const years = Math.floor(diff / 31536000);
+
+            if (diff < 60) return `Updated just now`;
+            if (minutes < 60) return `Updated ${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            if (hours < 24) return `Updated ${hours} hour${hours > 1 ? 's' : ''} ago`;
+            if (days < 30) return `Updated ${days} day${days > 1 ? 's' : ''} ago`;
+            if (months < 12) return `Updated ${months} month${months > 1 ? 's' : ''} ago`;
+            return `Updated ${years} year${years > 1 ? 's' : ''} ago`;
+        }
+        
+
+        const username = "Cryptowave2-0"; // ton pseudo GitHub
+        const cacheKey = `github_repos_${username}`;
+        const cacheTTL = 60 * 60 * 1000; // 1 heure
+
+        const cached = localStorage.getItem(cacheKey);
+        const now = Date.now();
+
+        if (cached) {
+            const { timestamp, data } = JSON.parse(cached);
+            if (now - timestamp < cacheTTL) {
+                console.log("✅ Données chargées depuis le cache.");
+                afficherRepos(data);
+            } else {
+                fetchRepos();
+            }
+        } else {
+            fetchRepos();
+        }
+
+        function fetchRepos() {
+            fetch(`https://api.github.com/users/${username}/repos`)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.status === 403) {
+                        return response.json().then(error => {
+                            if (error.message && error.message.includes("API rate limit exceeded")) {
+                                throw new Error("GitHub API rate limit exceeded. Please wait or use authentication.");
+                            }
+                            throw new Error("Accès interdit : " + error.message);
+                        });
+                    }
+                    if (!response.ok) {
+                        throw new Error(`Erreur API GitHub (${response.status})`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem(cacheKey, JSON.stringify({
+                        timestamp: Date.now(),
+                        data: data
+                    }));
+                    afficherRepos(data);
+                })
+                .catch(error => {
+                    console.error("Erreur lors du chargement des dépôts GitHub :", error);
+                });
+        }
+
+        function afficherRepos(repos) {
+            repos.forEach(repo => {
+                const target = document.getElementById(`${repo.id}`);
+                if (!target) {
+                    console.warn(`Aucun élément avec l’ID ${repo.id} trouvé dans le DOM, nom du repo : ${repo.name}`);
+                    return;
+                }
+
+                const div = document.createElement("div");
+                div.innerHTML = `<div class="right_text time">${timeAgo(repo.updated_at)}</div>`;
+                target.appendChild(div);
+            });
+        }
+
+
+        // Dépôt du site lui-même
+        const siteCacheKey = `github_site_repo_${username}`;
+        const siteCache = localStorage.getItem(siteCacheKey);
+
+        if (siteCache) {
+            const { timestamp, data } = JSON.parse(siteCache);
+            if (now - timestamp < cacheTTL) {
+                insertSiteTime(data);
+            } else {
+                fetchSiteRepo();
+            }
+        } else {
+            fetchSiteRepo();
+        }
+
+        function fetchSiteRepo() {
+            fetch(`https://api.github.com/repos/${username}/${username}.github.io`)
+                .then(response => response.json())
+                .then(response => {
+                    if (response.status === 403) {
+                        return response.json().then(error => {
+                            if (error.message && error.message.includes("API rate limit exceeded")) {
+                                throw new Error("GitHub API rate limit exceeded. Please wait or use authentication.");
+                            }
+                            throw new Error("Accès interdit : " + error.message);
+                        });
+                    }
+                    if (!response.ok) {
+                        throw new Error(`Erreur API GitHub (${response.status})`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem(siteCacheKey, JSON.stringify({
+                        timestamp: Date.now(),
+                        data: data
+                    }));
+                    insertSiteTime(data);
+                })
+                .catch(error => {
+                    console.error("Erreur lors du chargement du dépôt du site :", error);
+                });
+        }
+
+        function insertSiteTime(repo) {
+            const target = document.getElementById("credits_zone");
+            if (!target) return;
+            const span = document.createElement("span");
+            span.className = "time";
+            span.style.fontSize = "medium";
+            span.textContent = `${timeAgo("2025-07-15T01:13:43Z")}`;
+            target.textContent += " | "
+            target.appendChild(span);
+        }
+        
+
+        function copyToClipboard(element) {
+            const textToCopy = element.dataset.copy;
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    const originalText = element.innerText;
+                    element.innerText = "Copied";
+                    setTimeout(() => element.innerText = originalText, 1000);
+                })
+                .catch(err => {
+                    console.error('Erreur de copie :', err);
+                });
+        }
     </script>
 </body>
 </html>
