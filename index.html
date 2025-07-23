@@ -7,7 +7,7 @@
     <meta name="description" content="Free Web tutorials for HTML and CSS">
 
     <meta property="og:title" content="planet_edit - cryptowave2112">
-    <meta property="og:og:site_name" content="planet_edit's portfolio'">
+    <meta property="og:site_name" content="planet_edit's portfolio'">
     <meta property="og:description" content="A developer passionate about space, interactive design and digital creation.">
     <meta property="og:image" content="https://cryptowave2-0.github.io/images/portfolio.png">
     <meta property="og:url" content="https://cryptowave2-0.github.io">
@@ -337,9 +337,9 @@
         }
         
 
-        const username = "Cryptowave2-0"; // ton pseudo GitHub
-        const cacheKey = `github_repos_${username}`;
-        const cacheTTL = 60 * 60 * 1000; // 1 heure
+        const cacheKey = `github_repos_cryptowave2-0"`;
+        const cacheTTL = 60 * 60 * 10;
+        console.log(cacheTTL);
 
         const cached = localStorage.getItem(cacheKey);
         const now = Date.now();
@@ -348,6 +348,7 @@
             const { timestamp, data } = JSON.parse(cached);
             if (now - timestamp < cacheTTL) {
                 console.log("✅ Données chargées depuis le cache.");
+                console.log(`now: ${now}\ntimestamp: ${timestamp}\nnow - timestamp: ${now - timestamp}\ncacheTTL: ${cacheTTL}`);
                 afficherRepos(data);
             } else {
                 fetchRepos();
@@ -357,19 +358,14 @@
         }
 
         function fetchRepos() {
-            fetch(`https://api.github.com/users/${username}/repos`)
-                .then(response => response.json())
-                .then(response => {
-                    if (response.status === 403) {
-                        return response.json().then(error => {
-                            if (error.message && error.message.includes("API rate limit exceeded")) {
-                                throw new Error("GitHub API rate limit exceeded. Please wait or use authentication.");
-                            }
-                            throw new Error("Accès interdit : " + error.message);
-                        });
-                    }
+            fetch(`https:/api.github.com/users/cryptowave2-0/repos`)
+                .then(async response => {
                     if (!response.ok) {
-                        throw new Error(`Erreur API GitHub (${response.status})`);
+                        const errorData = await response.json();
+                        if (response.status === 403 && errorData.message.includes("API rate limit exceeded")) {
+                            throw new Error("GitHub API rate limit exceeded. Please wait or use authentication.");
+                        }
+                        throw new Error(`Erreur API GitHub (${response.status}) : ${errorData.message}`);
                     }
                     return response.json();
                 })
@@ -381,7 +377,7 @@
                     afficherRepos(data);
                 })
                 .catch(error => {
-                    console.error("Erreur lors du chargement des dépôts GitHub :", error);
+                    console.error("Erreur lors du chargement des dépôts GitHub :", error?.message || error);
                 });
         }
 
@@ -401,7 +397,7 @@
 
 
         // Dépôt du site lui-même
-        const siteCacheKey = `github_site_repo_${username}`;
+        const siteCacheKey = `github_site_repo_cryptowave2-0`;
         const siteCache = localStorage.getItem(siteCacheKey);
 
         if (siteCache) {
@@ -416,19 +412,14 @@
         }
 
         function fetchSiteRepo() {
-            fetch(`https://api.github.com/repos/${username}/${username}.github.io`)
-                .then(response => response.json())
-                .then(response => {
-                    if (response.status === 403) {
-                        return response.json().then(error => {
-                            if (error.message && error.message.includes("API rate limit exceeded")) {
-                                throw new Error("GitHub API rate limit exceeded. Please wait or use authentication.");
-                            }
-                            throw new Error("Accès interdit : " + error.message);
-                        });
-                    }
+            fetch(`https://api.github.com/repos/cryptowave2-0/cryptowave2-0.github.io`)
+                .then(async response => {
                     if (!response.ok) {
-                        throw new Error(`Erreur API GitHub (${response.status})`);
+                        const errorData = await response.json();
+                        if (response.status === 403 && errorData.message.includes("API rate limit exceeded")) {
+                            throw new Error("GitHub API rate limit exceeded. Please wait or use authentication.");
+                        }
+                        throw new Error(`Erreur API GitHub (${response.status}) : ${errorData.message}`);
                     }
                     return response.json();
                 })
@@ -440,7 +431,7 @@
                     insertSiteTime(data);
                 })
                 .catch(error => {
-                    console.error("Erreur lors du chargement du dépôt du site :", error);
+                    console.error("Erreur lors du chargement du dépôt du site :", error?.message || error);
                 });
         }
 
@@ -464,8 +455,8 @@
                     element.innerText = "Copied";
                     setTimeout(() => element.innerText = originalText, 1000);
                 })
-                .catch(err => {
-                    console.error('Erreur de copie :', err);
+                .catch(error => {
+                    console.error('Erreur de copie :', error.message || error);
                 });
         }
     </script>
