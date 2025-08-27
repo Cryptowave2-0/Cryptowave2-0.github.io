@@ -444,7 +444,7 @@
             const span = document.createElement("span");
             span.className = "time";
             span.style.fontSize = "medium";
-            span.textContent = `${timeAgo("2025-07-15T01:13:43Z")}`;
+            span.textContent = `${timeAgo(repo.updated_at)}`;
             target.textContent += " | "
             target.appendChild(span);
         }
