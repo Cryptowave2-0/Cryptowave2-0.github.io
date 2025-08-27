@@ -358,7 +358,7 @@
         }
 
         function fetchRepos() {
-            fetch(`https:/api.github.com/users/cryptowave2-0/repos`)
+            fetch(`https://api.github.com/users/cryptowave2-0/repos`)
                 .then(async response => {
                     if (!response.ok) {
                         const errorData = await response.json();
