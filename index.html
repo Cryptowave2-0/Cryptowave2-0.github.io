@@ -346,6 +346,9 @@
 
         if (cached) {
             const { timestamp, data } = JSON.parse(cached);
+            console.log(timestamp);
+            console.log(now);
+            console.log(now - timestamp);
             if (now - timestamp < cacheTTL) {
                 console.log("✅ Données chargées depuis le cache.");
                 console.log(`now: ${now}\ntimestamp: ${timestamp}\nnow - timestamp: ${now - timestamp}\ncacheTTL: ${cacheTTL}`);
