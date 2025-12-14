@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,16 @@
 
     <meta property="og:title" content="planet_edit - cryptowave2112">
     <meta property="og:site_name" content="planet_edit's portfolio'">
-    <meta property="og:description" content="A developer passionate about space, interactive design and digital creation.">
+    <meta property="og:description"
+        content="A developer passionate about space, interactive design and digital creation.">
     <meta property="og:image" content="https://cryptowave2-0.github.io/images/portfolio.png">
     <meta property="og:url" content="https://cryptowave2-0.github.io">
     <meta property="og:type" content="profile">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/icon.ico">
     <title>planet_edit</title>
     <style>
@@ -23,12 +26,15 @@
             z-index: 10;
             cursor: default;
         }
+
         a {
             cursor: pointer;
         }
+
         a * {
             cursor: pointer;
         }
+
         body {
             position: absolute;
             left: 0;
@@ -44,16 +50,19 @@
             font-weight: 500;
             font-style: normal;
         }
+
         section {
             display: block;
             padding: 0 15%;
             margin: 75px 0;
         }
+
         .fixed {
             position: fixed;
             height: 0;
             top: 0;
         }
+
         .light {
             width: 1000px;
             height: 400px;
@@ -62,41 +71,49 @@
             pointer-events: none;
             z-index: -1;
         }
+
         .leftl {
             position: relative;
             left: calc(-500px);
             rotate: 30deg;
             top: -200px;
         }
+
         .rightl {
             position: relative;
             left: calc(-500px + 100dvw);
             rotate: calc(- 100dh / 100dh * 50deg);
             top: -600px;
         }
+
         .align-center {
             text-align: center;
         }
+
         .t1 {
             width: fit-content;
             font-size: larger;
             font-weight: 700;
         }
+
         .t2 {
             width: fit-content;
             color: #a0a0a0;
             font-weight: 400;
         }
+
         .t3 {
             width: fit-content;
             color: #a0a0a0;
             font-weight: 400;
         }
+
         .quote {
             width: fit-content;
             color: #a0a0a0;
             font-weight: 400;
         }
+
         .tag {
             color: #a0a0a0;
             font-weight: 500;
@@ -108,27 +125,33 @@
             border-color: rgb(86, 86, 86);
             background: #0e0e0e;
         }
-        .marg { 
+
+        .marg {
             margin: 10px 0;
         }
+
         .center {
             position: relative;
             left: 50%;
             translate: -50%;
         }
+
         .scroll {
             height: 200dvh;
         }
+
         .logo {
             width: 50px;
             margin: 10px 0;
         }
+
         .tags-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content:flex-start;
+            justify-content: flex-start;
             gap: 5px 5px;
         }
+
         .list-card {
             padding: 0;
             display: grid;
@@ -136,8 +159,17 @@
             gap: 10px;
             list-style: none;
         }
-        .pcard {
-            width:auto;
+
+        .list-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .ccard {
+            width: fit-content;
             background: #0e0e0e;
             border-radius: 12px;
             color: #a0a0a0;
@@ -147,36 +179,62 @@
             border-style: solid;
             border-color: rgb(86, 86, 86);
         }
-        .pcard .pctitle {
+
+        .pcard {
+            width: auto;
+            background: #0e0e0e;
+            border-radius: 12px;
+            color: #a0a0a0;
+            font-weight: 500;
+            padding: 20px 40px 20px 40px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(86, 86, 86);
+        }
+
+        .ccard .cctitle {
             color: #c0c0c0;
-            border-bottom:solid 1px rgb(86, 86, 86);
+            border-bottom: solid 1px rgb(86, 86, 86);
             margin: 0 0 10px;
         }
+
+        .pcard .pctitle {
+            color: #c0c0c0;
+            border-bottom: solid 1px rgb(86, 86, 86);
+            margin: 0 0 10px;
+        }
+
         .octicon-wip {
-            color:#3fb950;
+            color: #3fb950;
         }
+
         .octicon-done {
-            color:#a371f7;
+            color: #a371f7;
         }
+
         .octicon-unfinished {
-            color:#848d97;
+            color: #848d97;
         }
+
         .octicon {
             width: 16px;
             height: 16px;
             transform: translateY(8%);
         }
+
         .time {
             font-size: smaller;
             font-weight: 300;
             text-decoration: underline;
             margin: 10px 0 0;
         }
+
         .right_text {
             text-align: right;
         }
     </style>
 </head>
+
 <body>
     <div class="fixed">
         <div class="leftl light fixed"></div>
@@ -196,18 +254,52 @@
     <section>
         <div class="tag center marg">About me</div>
         <div class="t2 center align-center">
-            I’m a developer and digital creator with a 
-            passion for space exploration, interactive 
-            design, and immersive technology. I build 
+            I’m a developer and digital creator with a
+            passion for space exploration, interactive
+            design, and immersive technology. I build
             projects that blend science, code, and art.
         </div>
+    </section>
+    <section>
+        <div class="tag center marg">Contests</div>
+        <ul class="list-card-grid marg" id="contests">
+            <a href="https://youtu.be/hzn0bdpcLQc?si=Zxfo43AxtCBCFjd_"
+                style="display: block; text-decoration: none; color: inherit; cursor: pointer; width: fit-content; display: block;">
+                <li class="ccard">
+                    <div class="cctitle t1">
+                        Cyber Ninja CTF - 1st Edition
+                    </div>
+                    <div class="pcdesc t2">Participation in the Cyber Ninja CTF with a solo qualification phase finished in the top 46 out of 60 participants.
+                    <br>Qualified for the team final with four players and achieved sixth place out of fifteen teams.</div>
+                    <div>
+                        <div class="right_text" style="font-size: smaller; font-weight: 300;">Oteria Cyber School - <span class="time" data-time="1743262200000"></span>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="https://youtu.be/L-ZDjXmgIF4?si=uId4Da7YFB-E1Cq4"
+                style="display: block; text-decoration: none; color: inherit; cursor: pointer; width: fit-content; display: block;">
+                <li class="ccard">
+                    <div class="cctitle t1">
+                        Cyber Ninja CTF - 2nd Edition
+                    </div>
+                    <div class="pcdesc t2">Participation in the second edition of the Cyber Ninja CTF with a solo qualification phase finished in the top 32 out of
+                    60 participants.
+                    <br>The team final with four players is scheduled to take place soon.</div>
+                    <div>
+                        <div class="right_text" style="font-size: smaller; font-weight: 300;">Oteria Cyber School - <span class="time" data-time="1768663800000"></span>
+                        </div>
+                    </div>
+                </li>
+            </a>
+        </ul>
     </section>
     <section>
         <div class="tag center marg">Projects</div>
         <p class="t2">
             Software, frameworks and languages I use:
         </p>
-        
+
         <div class="tags-container">
             <div class="tag">Python</div>
             <div class="tag">Three.js</div>
@@ -222,64 +314,88 @@
             <div class="tag">Unity</div>
             <div class="tag">VSCode</div>
         </div>
-        
+
         <p class="t2">
             Some projects of mine:
         </p>
 
         <ul class="list-card marg" id="projects">
-            <a href="https://github.com/Cryptowave2-0/artemis_program_mod_part_for_sfs" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
-            <li class="pcard" id="1052226532">
-                <div class="pctitle t1">
-                    <svg class="octicon octicon-wip" fill="currentColor">
-                        <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-                    </svg>
-                Artemis SFS Mod</div>
-                <div class="pcdesc t2">A simple mod for the video game named Spaceflight Simulator. It adds the SLS and the Falcon Heavy to recreate the Artemis program</div>
-            </li>
+            <a href="https://github.com/Cryptowave2-0/artemis_program_mod_part_for_sfs"
+                style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+                <li class="pcard" id="1052226532">
+                    <div class="pctitle t1">
+                        <svg class="octicon octicon-wip" fill="currentColor">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z">
+                            </path>
+                        </svg>
+                        Artemis SFS Mod
+                    </div>
+                    <div class="pcdesc t2">A simple mod for the video game named Spaceflight Simulator. It adds the SLS
+                        and the Falcon Heavy to recreate the Artemis program</div>
+                </li>
             </a>
-            <a href="https://github.com/Cryptowave2-0/hebergement_system" style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
-            <li class="pcard" id="896260033">
-                <div class="pctitle t1">
-                    <svg class="octicon octicon-wip" fill="currentColor">
-                        <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-                        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-                    </svg>
-                Hosting System</div>
-                <div class="pcdesc t2">A dynamic website using the flask framework to run your code from everywhere else.</div>
-            </li>
+            <a href="https://github.com/Cryptowave2-0/hebergement_system"
+                style="display: block; text-decoration: none; color: inherit; cursor: pointer;">
+                <li class="pcard" id="896260033">
+                    <div class="pctitle t1">
+                        <svg class="octicon octicon-wip" fill="currentColor">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z">
+                            </path>
+                        </svg>
+                        Hosting System
+                    </div>
+                    <div class="pcdesc t2">A dynamic website using the flask framework to run your code from everywhere
+                        else.</div>
+                </li>
             </a>
-            <a href="https://github.com/Cryptowave2-0/titan_mod_part_for_sfs" style="display: block; text-decoration: none; color: inherit;">
-            <li class="pcard" id="733828356">
-                <div class="pctitle t1">
-                    <svg class="octicon octicon-done" fill="currentColor">
-                        <path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path>
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path>
-                    </svg>
-                Titan Mod Pack for Spaceflight Simulator</div>
-                <div class="pcdesc t2">A Spaceflight Simulator mod that adds the Titan II rocket.</div>
-            </li>
+            <a href="https://github.com/Cryptowave2-0/titan_mod_part_for_sfs"
+                style="display: block; text-decoration: none; color: inherit;">
+                <li class="pcard" id="733828356">
+                    <div class="pctitle t1">
+                        <svg class="octicon octicon-done" fill="currentColor">
+                            <path
+                                d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z">
+                            </path>
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z">
+                            </path>
+                        </svg>
+                        Titan Mod Pack for Spaceflight Simulator
+                    </div>
+                    <div class="pcdesc t2">A Spaceflight Simulator mod that adds the Titan II rocket.</div>
+                </li>
             </a>
-            <a href="https://github.com/Cryptowave2-0/gemini_mod_part_for_sfs" style="display: block; text-decoration: none; color: inherit;">
+            <a href="https://github.com/Cryptowave2-0/gemini_mod_part_for_sfs"
+                style="display: block; text-decoration: none; color: inherit;">
                 <li class="pcard" id="727898085">
                     <div class="pctitle t1">
                         <svg class="octicon octicon-done" fill="currentColor">
-                            <path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path>
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path>
+                            <path
+                                d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z">
+                            </path>
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z">
+                            </path>
                         </svg>
-                    Gemini Mod Pack for Spaceflight Simulator</div>
-                    <div class="pcdesc t2">A mod that implements the Gemini spacecraft in the Spaceflight Simulator video game.</div>
+                        Gemini Mod Pack for Spaceflight Simulator
+                    </div>
+                    <div class="pcdesc t2">A mod that implements the Gemini spacecraft in the Spaceflight Simulator
+                        video game.</div>
                 </li>
             </a>
-            <a href="https://github.com/Cryptowave2-0/SFS-PLANET-EDITOR" style="display: block; text-decoration: none; color: inherit;">
+            <a href="https://github.com/Cryptowave2-0/SFS-PLANET-EDITOR"
+                style="display: block; text-decoration: none; color: inherit;">
                 <li class="pcard" id="651924552">
                     <div class="pctitle t1">
                         <svg class="octicon octicon-unfinished" fill="currentColor">
-                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm9.78-2.22-5.5 5.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l5.5-5.5a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z"></path>
+                            <path
+                                d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm9.78-2.22-5.5 5.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l5.5-5.5a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z">
+                            </path>
                         </svg>
-                    SFS PLANET EDITOR</div>
-                    <div class="pcdesc t2">An application to modify and create your own solar systems for the 2d video game Sapceflight Simulator</div>
+                        SFS PLANET EDITOR
+                    </div>
+                    <div class="pcdesc t2">An application to modify and create your own solar systems for the 2d video
+                        game Sapceflight Simulator</div>
                 </li>
             </a>
         </ul>
@@ -289,13 +405,18 @@
         <p class="t2">
             My social networks and contacts:
         </p>
-        
+
         <div class="tags-container">
-            <a href="https://discord.gg/7d5jfTJSfu" target="_blank" class="tag" style="text-decoration: none;">Discord</a>
-            <a href="https://github.com/Cryptowave2-0" target="_blank" class="tag" style="text-decoration: none;">Github</a>
-            <a href="https://www.youtube.com/@planet_edit_the_only_one" target="_blank" class="tag" style="text-decoration: none;">Youtube</a>
-            <a href="https://www.instagram.com/planet_edit_sfs/" target="_blank" class="tag" style="text-decoration: none;">Instagram</a>
-            <span class="tag" onclick="copyToClipboard(this)" data-copy="planeteditoroff@gmail.com" style="cursor: pointer;">Email</span>
+            <a href="https://discord.gg/7d5jfTJSfu" target="_blank" class="tag"
+                style="text-decoration: none;">Discord</a>
+            <a href="https://github.com/Cryptowave2-0" target="_blank" class="tag"
+                style="text-decoration: none;">Github</a>
+            <a href="https://www.youtube.com/@planet_edit_the_only_one" target="_blank" class="tag"
+                style="text-decoration: none;">Youtube</a>
+            <a href="https://www.instagram.com/planet_edit_sfs/" target="_blank" class="tag"
+                style="text-decoration: none;">Instagram</a>
+            <span class="tag" onclick="copyToClipboard(this)" data-copy="planeteditoroff@gmail.com"
+                style="cursor: pointer;">Email</span>
         </div>
     </section>
     <section>
@@ -307,13 +428,13 @@
         const leftl = document.querySelector('.leftl');
         const lights = document.querySelectorAll('.light');
         const angle = (window.innerHeight / window.innerWidth) * 50;
-        
+
         rightl.style.rotate = `-${angle}deg`;
         leftl.style.rotate = `${angle}deg`;
-        rightl.style.left = `calc(-${window.innerWidth/1.325}px + 100dvw)`;
-        leftl.style.left = `-${window.innerWidth/1.325}px`;
+        rightl.style.left = `calc(-${window.innerWidth / 1.325}px + 100dvw)`;
+        leftl.style.left = `-${window.innerWidth / 1.325}px`;
         lights.forEach((light) => {
-                light.style.width = `${window.innerWidth*1.5}px`;
+            light.style.width = `${window.innerWidth * 1.5}px`;
         })
 
 
@@ -328,14 +449,15 @@
             const months = Math.floor(diff / 2592000); // approx 30 jours
             const years = Math.floor(diff / 31536000);
 
-            if (diff < 60) return `Updated just now`;
-            if (minutes < 60) return `Updated ${minutes} minute${minutes > 1 ? 's' : ''} ago`;
-            if (hours < 24) return `Updated ${hours} hour${hours > 1 ? 's' : ''} ago`;
-            if (days < 30) return `Updated ${days} day${days > 1 ? 's' : ''} ago`;
-            if (months < 12) return `Updated ${months} month${months > 1 ? 's' : ''} ago`;
-            return `Updated ${years} year${years > 1 ? 's' : ''} ago`;
+            if (diff < 0) return `later`;
+            if (diff < 60) return `just now`;
+            if (minutes < 60) return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+            if (hours < 24) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            if (days < 30) return `${days} day${days > 1 ? 's' : ''} ago`;
+            if (months < 12) return `${months} month${months > 1 ? 's' : ''} ago`;
+            return `${years} year${years > 1 ? 's' : ''} ago`;
         }
-        
+
 
         const cacheKey = `github_repos_cryptowave2-0"`;
         const cacheTTL = 60 * 60 * 10;
@@ -393,7 +515,7 @@
                 }
 
                 const div = document.createElement("div");
-                div.innerHTML = `<div class="right_text time">${timeAgo(repo.updated_at)}</div>`;
+                div.innerHTML = `<div class="right_text time">Updated ${timeAgo(repo.updated_at)}</div>`;
                 target.appendChild(div);
             });
         }
@@ -444,11 +566,11 @@
             const span = document.createElement("span");
             span.className = "time";
             span.style.fontSize = "medium";
-            span.textContent = `${timeAgo(repo.updated_at)}`;
+            span.textContent = `Updated ${timeAgo(repo.updated_at)}`;
             target.textContent += " | "
             target.appendChild(span);
         }
-        
+
 
         function copyToClipboard(element) {
             const textToCopy = element.dataset.copy;
@@ -462,6 +584,20 @@
                     console.error('Erreur de copie :', error.message || error);
                 });
         }
+
+        document.querySelectorAll(".time").forEach(span => {
+                const rawTime = span.dataset.time;
+                if (!rawTime) return;
+
+                // accepte ISO date OU timestamp
+                const date = rawTime.match(/^\d+$/)
+                    ? new Date(Number(rawTime))
+                    : new Date(rawTime);
+
+                span.textContent = timeAgo(date);
+            });
+
     </script>
 </body>
+
 </html>
