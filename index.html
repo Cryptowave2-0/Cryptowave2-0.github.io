@@ -223,14 +223,43 @@
         }
 
         .time {
+            position: relative;
+            cursor: help;
             font-size: smaller;
             font-weight: 300;
             text-decoration: underline;
             margin: 10px 0 0;
         }
 
+        .right_container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
         .right_text {
+            width: fit-content;
             text-align: right;
+        }
+
+        .time-popover {
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #111;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s ease;
+            z-index: 1000;
+        }
+
+        .time:hover .time-popover {
+            opacity: 1;
         }
     </style>
 </head>
@@ -269,10 +298,14 @@
                     <div class="cctitle t1">
                         Cyber Ninja CTF - 1st Edition
                     </div>
-                    <div class="pcdesc t2">Participation in the Cyber Ninja CTF with a solo qualification phase finished in the top 46 out of 60 participants.
-                    <br>Qualified for the team final with four players and achieved sixth place out of fifteen teams.</div>
+                    <div class="pcdesc t2">Participation in the Cyber Ninja CTF with a solo qualification phase finished
+                        in the top 46 out of 60 participants.
+                        <br>Qualified for the team final with four players and achieved sixth place out of fifteen
+                        teams.
+                    </div>
                     <div>
-                        <div class="right_text" style="font-size: smaller; font-weight: 300;">Oteria Cyber School - <span class="time" data-time="1743262200000"></span>
+                        <div class="right_text" style="font-size: smaller; font-weight: 300; width: 100%;">Oteria Cyber School -
+                            <span class="time" data-time="1743262200000"></span>
                         </div>
                     </div>
                 </li>
@@ -283,11 +316,14 @@
                     <div class="cctitle t1">
                         Cyber Ninja CTF - 2nd Edition
                     </div>
-                    <div class="pcdesc t2">Participation in the second edition of the Cyber Ninja CTF with a solo qualification phase finished in the top 32 out of
-                    60 participants.
-                    <br>The team final with four players is scheduled to take place soon.</div>
+                    <div class="pcdesc t2">Participation in the second edition of the Cyber Ninja CTF with a solo
+                        qualification phase finished in the top 32 out of
+                        60 participants.
+                        <br>The team final with four players is scheduled to take place soon.
+                    </div>
                     <div>
-                        <div class="right_text" style="font-size: smaller; font-weight: 300;">Oteria Cyber School - <span class="time" data-time="1768663800000"></span>
+                        <div class="right_text" style="font-size: smaller; font-weight: 300; width: 100%;">Oteria Cyber School -
+                            <span class="time" data-time="1768663800000"></span>
                         </div>
                     </div>
                 </li>
@@ -438,6 +474,9 @@
         })
 
 
+
+
+
         function timeAgo(isoDate) {
             const now = new Date();
             const updated = new Date(isoDate);
@@ -457,6 +496,25 @@
             if (months < 12) return `${months} month${months > 1 ? 's' : ''} ago`;
             return `${years} year${years > 1 ? 's' : ''} ago`;
         }
+
+
+        function applyTime() {
+            document.querySelectorAll(".time").forEach(el => {
+                const rawTime = el.dataset.time;
+                if (!rawTime) return;
+
+                // accepte ISO OU timestamp
+                const date = rawTime.match(/^\d+$/)
+                    ? new Date(Number(rawTime))
+                    : new Date(rawTime);
+
+                el.textContent = timeAgo(date);
+            });
+        }
+
+
+        applyTime();
+
 
 
         const cacheKey = `github_repos_cryptowave2-0"`;
@@ -514,8 +572,11 @@
                     return;
                 }
 
+
+                const timestamp = new Date(repo.updated_at).getTime();
                 const div = document.createElement("div");
-                div.innerHTML = `<div class="right_text time">Updated ${timeAgo(repo.updated_at)}</div>`;
+                div.className = `right_container`;
+                div.innerHTML = `<div class="right_text time" data-time="${timestamp}">Updated ${timeAgo(repo.updated_at)}</div>`;
                 target.appendChild(div);
             });
         }
@@ -566,6 +627,10 @@
             const span = document.createElement("span");
             span.className = "time";
             span.style.fontSize = "medium";
+
+            const timestamp = new Date(repo.updated_at).getTime();
+            span.dataset.time = timestamp;
+
             span.textContent = `Updated ${timeAgo(repo.updated_at)}`;
             target.textContent += " | "
             target.appendChild(span);
@@ -585,17 +650,35 @@
                 });
         }
 
-        document.querySelectorAll(".time").forEach(span => {
-                const rawTime = span.dataset.time;
+        function formatFullDate(date) {
+            const months = [
+                "January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"
+            ];
+
+            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        function applyTimePopover() {
+            document.querySelectorAll(".time").forEach(el => {
+                if (el.querySelector(".time-popover")) return;
+                
+                const rawTime = el.dataset.time;
                 if (!rawTime) return;
 
-                // accepte ISO date OU timestamp
                 const date = rawTime.match(/^\d+$/)
                     ? new Date(Number(rawTime))
                     : new Date(rawTime);
 
-                span.textContent = timeAgo(date);
+                const popover = document.createElement("div");
+                popover.className = "time-popover";
+                popover.textContent = formatFullDate(date);
+
+                el.appendChild(popover);
             });
+        }
+
+        applyTimePopover();
 
     </script>
 </body>
