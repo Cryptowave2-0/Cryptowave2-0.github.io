@@ -64,7 +64,7 @@
         }
 
         .light {
-            width: 1000px;
+            width: calc(100dvw * 1.5);
             height: 400px;
             background: radial-gradient(rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.09) 15%, rgba(255, 255, 255, 0.04) 30%, rgba(255, 255, 255, 0.01) 45%, rgba(255, 255, 255, 0) 60%);
             border-radius: 50%;
@@ -74,15 +74,15 @@
 
         .leftl {
             position: relative;
-            left: calc(-500px);
-            rotate: 30deg;
+            left: -75.5vw;
+            transform: rotate(calc(100vh / 100vw * 50deg));
             top: -200px;
         }
 
         .rightl {
             position: relative;
-            left: calc(-500px + 100dvw);
-            rotate: calc(- 100dh / 100dh * 50deg);
+            left: calc(-75.5vw + 100vw);
+            transform: rotate(calc(-1 * (100vh / 100vw) * 50deg));
             top: -600px;
         }
 
@@ -529,23 +529,6 @@
         <p class="t2 center" id="credits_zone">Made by planet_edit <br class="sepopp"></p>
     </section>
     <script>
-        const rightl = document.querySelector('.rightl');
-        const leftl = document.querySelector('.leftl');
-        const lights = document.querySelectorAll('.light');
-        const angle = (window.innerHeight / window.innerWidth) * 50;
-
-        rightl.style.rotate = `-${angle}deg`;
-        leftl.style.rotate = `${angle}deg`;
-        rightl.style.left = `calc(-${window.innerWidth / 1.325}px + 100dvw)`;
-        leftl.style.left = `-${window.innerWidth / 1.325}px`;
-        lights.forEach((light) => {
-            light.style.width = `${window.innerWidth * 1.5}px`;
-        })
-
-
-
-
-
         function timeAgo(isoDate) {
             const now = new Date();
             const updated = new Date(isoDate);
