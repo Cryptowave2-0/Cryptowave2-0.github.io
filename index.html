@@ -413,6 +413,7 @@
         </p>
         <div class="tags-container">
             <div class="button ugreen">VSCode</div>
+            <div class="button ured">Github</div>
             <div class="button ugreen">Blender</div>
             <div class="button uorange">Unity</div>
             <div class="button ured">Git</div>
@@ -682,14 +683,14 @@
             span.style.fontSize = "medium";
 
             span.textContent = ` | `;
-            
+
             target.appendChild(span);
 
-            
+
             const span2 = document.createElement("span");
             span2.className = "time";
             span.style.fontSize = "medium";
-            
+
 
             const timestamp = new Date(repo.updated_at).getTime();
             span2.dataset.time = timestamp;
