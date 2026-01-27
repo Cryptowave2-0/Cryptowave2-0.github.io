@@ -126,6 +126,25 @@
             background: #0e0e0e;
         }
 
+        .button {
+            color: rgb(42, 42, 42);
+            font-weight: 500;
+            width: fit-content;
+            padding: 2px 10px 2px 10px;
+            border-radius: 500px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #0e0e0e;
+            background: rgb(112, 112, 112);
+            transition: 500ms;
+        }
+
+        .button:hover {
+            color: #a0a0a0;
+            border-color: rgb(86, 86, 86);
+            background: #0e0e0e;
+        }
+
         .marg {
             margin: 10px 0;
         }
@@ -147,8 +166,10 @@
 
         .tags-container {
             display: flex;
+            width: fit-content;
             flex-wrap: wrap;
             justify-content: flex-start;
+            text-align: center;
             gap: 5px 5px;
         }
 
@@ -261,6 +282,41 @@
         .time:hover .time-popover {
             opacity: 1;
         }
+
+        .uorange:hover {
+            background-color: #352200;
+        }
+
+        .ugreen:hover {
+            background-color: #043500;
+        }
+
+        .ured:hover {
+            background-color: #350000;
+        }
+
+        .sepopp {
+            display: none;
+        }
+
+        .sep {
+            display: inline;
+        }
+
+        @media screen and (max-width: 400px) {
+
+            .sepopp {
+                display: inline;
+            }
+
+            .sep {
+                display: none;
+            }
+
+            #credits_zone {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
@@ -304,7 +360,8 @@
                         teams.
                     </div>
                     <div>
-                        <div class="right_text" style="font-size: smaller; font-weight: 300; width: 100%;">Oteria Cyber School -
+                        <div class="right_text" style="font-size: smaller; font-weight: 300; width: 100%;">Oteria Cyber
+                            School -
                             <span class="time" data-time="1743262200000"></span>
                         </div>
                     </div>
@@ -322,7 +379,8 @@
                         <br>Placed 15th, finishing last, in the team final with a four-player team.
                     </div>
                     <div>
-                        <div class="right_text" style="font-size: smaller; font-weight: 300; width: 100%;">Oteria Cyber School -
+                        <div class="right_text" style="font-size: smaller; font-weight: 300; width: 100%;">Oteria Cyber
+                            School -
                             <span class="time" data-time="1768663800000"></span>
                         </div>
                     </div>
@@ -331,26 +389,37 @@
         </ul>
     </section>
     <section>
-        <div class="tag center marg">Projects</div>
+        <div class="tag center marg">Skills</div>
         <p class="t2">
-            Software, frameworks and languages I use:
+            Languages:
         </p>
-
         <div class="tags-container">
-            <div class="tag">Python</div>
-            <div class="tag">Three.js</div>
-            <div class="tag">Blender</div>
-            <div class="tag">React</div>
-            <div class="tag">kOS</div>
-            <div class="tag">Node.js</div>
-            <div class="tag">Unity</div>
-            <div class="tag">Git</div>
-            <div class="tag">Django</div>
-            <div class="tag">flask</div>
-            <div class="tag">Unity</div>
-            <div class="tag">VSCode</div>
+            <div class="button ugreen">Python</div>
+            <div class="button uorange">JavaScript</div>
+            <div class="button ured">kOS</div>
         </div>
-
+        <p class="t2">
+            Frameworks:
+        </p>
+        <div class="tags-container">
+            <div class="button ugreen">flask</div>
+            <div class="button uorange">React</div>
+            <div class="button ured">Three.js</div>
+            <div class="button ured">Node.js</div>
+            <div class="button ured">Django</div>
+        </div>
+        <p class="t2">
+            Tools:
+        </p>
+        <div class="tags-container">
+            <div class="button ugreen">VSCode</div>
+            <div class="button ugreen">Blender</div>
+            <div class="button uorange">Unity</div>
+            <div class="button ured">Git</div>
+        </div>
+    </section>
+    <section>
+        <div class="tag center marg">Projects</div>
         <p class="t2">
             Some projects of mine:
         </p>
@@ -443,21 +512,21 @@
         </p>
 
         <div class="tags-container">
-            <a href="https://discord.gg/7d5jfTJSfu" target="_blank" class="tag"
+            <a href="https://discord.gg/7d5jfTJSfu" target="_blank" class="button"
                 style="text-decoration: none;">Discord</a>
-            <a href="https://github.com/Cryptowave2-0" target="_blank" class="tag"
+            <a href="https://github.com/Cryptowave2-0" target="_blank" class="button"
                 style="text-decoration: none;">Github</a>
-            <a href="https://www.youtube.com/@planet_edit_the_only_one" target="_blank" class="tag"
+            <a href="https://www.youtube.com/@planet_edit_the_only_one" target="_blank" class="button"
                 style="text-decoration: none;">Youtube</a>
-            <a href="https://www.instagram.com/planet_edit_sfs/" target="_blank" class="tag"
+            <a href="https://www.instagram.com/planet_edit_sfs/" target="_blank" class="button"
                 style="text-decoration: none;">Instagram</a>
-            <span class="tag" onclick="copyToClipboard(this)" data-copy="planeteditoroff@gmail.com"
+            <span class="button" onclick="copyToClipboard(this)" data-copy="planeteditoroff@gmail.com"
                 style="cursor: pointer;">Email</span>
         </div>
     </section>
     <section>
         <div class="tag center marg">Credits</div>
-        <p class="t2 center" id="credits_zone">Made by planet_edit</p>
+        <p class="t2 center" id="credits_zone">Made by planet_edit <br class="sepopp"></p>
     </section>
     <script>
         const rightl = document.querySelector('.rightl');
@@ -625,15 +694,26 @@
             const target = document.getElementById("credits_zone");
             if (!target) return;
             const span = document.createElement("span");
-            span.className = "time";
+
+            span.className = "sep";
             span.style.fontSize = "medium";
 
-            const timestamp = new Date(repo.updated_at).getTime();
-            span.dataset.time = timestamp;
-
-            span.textContent = `Updated ${timeAgo(repo.updated_at)}`;
-            target.textContent += " | "
+            span.textContent = ` | `;
+            
             target.appendChild(span);
+
+            
+            const span2 = document.createElement("span");
+            span2.className = "time";
+            span.style.fontSize = "medium";
+            
+
+            const timestamp = new Date(repo.updated_at).getTime();
+            span2.dataset.time = timestamp;
+
+            span2.textContent = `Updated ${timeAgo(repo.updated_at)}`;
+            // target.textContent += "<span> | </span>"
+            target.appendChild(span2);
         }
 
 
@@ -662,7 +742,7 @@
         function applyTimePopover() {
             document.querySelectorAll(".time").forEach(el => {
                 if (el.querySelector(".time-popover")) return;
-                
+
                 const rawTime = el.dataset.time;
                 if (!rawTime) return;
 
@@ -670,7 +750,7 @@
                     ? new Date(Number(rawTime))
                     : new Date(rawTime);
 
-                const popover = document.createElement("div");
+                const popover = document.createElement("span");
                 popover.className = "time-popover";
                 popover.textContent = formatFullDate(date);
 
