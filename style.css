@@ -49,6 +49,12 @@ section {
     pointer-events: none;
 }
 
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .halftone {
     background-image: radial-gradient(
       circle at center,
@@ -60,3 +66,4 @@ section {
     background-position: 0 0;
 
 }
+
