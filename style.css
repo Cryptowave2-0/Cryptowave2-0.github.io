@@ -58,11 +58,11 @@ section {
 .halftone {
     background-image: radial-gradient(
       circle at center,
-      #1b1b1b 0.05rem,
-      transparent 0.05rem
+      #1b1b1b 1px,
+      transparent 1px
     );
     mask-image: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0.1));
-    background-size: 0.5rem 0.5rem;
+    background-size: 6px 6px;
     background-position: 0 0;
 
 }
